@@ -11,7 +11,7 @@ cloudinary.config({
 module.exports ={
     generatingimage:async (req,res) =>{
       const {input}=req.body;
-      sdk.auth('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMjlhYWI0MzctYTllZi00YWIzLWFlNWQtMjQ3MjRjNzgyOTgzIiwidHlwZSI6ImFwaV90b2tlbiJ9.KaMiwr2lyXpdWUpLI4Hmm2RzsjpPLoveo65qt9zLbIE');
+      sdk.auth(process.env.sdk);
       data=sdk.image_generation_create({
       response_as_dict: true,
       attributes_as_list: false,
